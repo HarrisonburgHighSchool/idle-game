@@ -1,6 +1,6 @@
 var score = 0;
 
-postToPage(score);
+postToPage(score); // Print to the page
 
 createButton('Button', btnPress);
 changeTitle('Clicker Game');
