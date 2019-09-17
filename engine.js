@@ -42,7 +42,7 @@ class HTMLElement {
     if(id) {
       this.id = id;
     } else {
-      this.id = String(Math.random() * 100) 
+      this.id = String(Math.floor(Math.random() * 10000));
     }
     if(!parent) {
       this.parent = 'game';
@@ -52,15 +52,32 @@ class HTMLElement {
     this.value  = value;
     this.type;
     this.hidden = false;
+    this.add(this.parent);
   }
   add(parent) {
     if(parent) {
       this.parent = parent;
     }
-    let element = document.createElement(this.tag);
-    element.innerHTML = this.value;
+    let element = this.create()
     document.getElementById(this.parent).appendChild(element);
     console.log('Created element with id ' + this.id);
+
+  }
+  edit(value) {
+    //console.log(document.getElementById(this.id));
+    let element = this.getElement();
+    element.innerHTML = value;
+  }
+  create() {
+    let element = document.createElement(this.tag);
+    element.innerHTML = this.value;
+    console.log("Adding element with ID: " + element.id);
+    element.id = this.id;
+    return element;
+  }
+  getElement() {
+    let element = document.getElementById(this.id);
+    return element;
   }
 }
 
@@ -73,10 +90,11 @@ class Button extends HTMLElement {
     if(parent) {
       this.parent = parent;
     }
-    let button = document.createElement(this.tag);
+    let button = this.create();
     button.addEventListener('click', this.script);
-    button.innerHTML = this.value;
     button.className = 'btn btn-primary';
+
     document.getElementById(this.parent).appendChild(button);
+    console.log('Created element with id ' + this.id);
   }
 }

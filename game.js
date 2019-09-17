@@ -1,15 +1,15 @@
 var score = 0;
 
-postToPage(score); // Print to the page
+var button = new Button('hello');
 
-createButton('Button', btnPress); // Make a button
-changeTitle('Clicker Game');
-createText('Hello');
+setInterval(update, 50);
+setInterval(increment, 1000);
 
-setInterval(btnPress, 1000);
+function update() {
+  button.edit(score);
+}
 
-function btnPress() {
+function increment() {
   score++;
-  postToPage(score);
 }
 
