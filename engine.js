@@ -1,7 +1,7 @@
 function postToPage(message) {
   var para = document.createElement("p");                 // Create a <p> element
-  para.innerHTML = message;     
-  para.id = 'message' 
+  para.innerHTML = message;
+  para.id = 'message'
   var child = document.getElementById('message');                         // Insert text
   document.getElementById("game").replaceChild(para, child);   // Append <p> to <div> with id="myDIV"
 }
@@ -55,7 +55,7 @@ class HTMLElement {
     }
     this.type;
     this.hidden = false;
-    this.add(this.parent);
+
   }
   add(parent) {
     if(parent) {
