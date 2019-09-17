@@ -80,7 +80,3 @@ class Button extends HTMLElement {
     document.getElementById(this.parent).appendChild(button);
   }
 }
-
-function hello() {
-  console.log('Hello');
-}
