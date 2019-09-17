@@ -1,10 +1,13 @@
 var score = 0;
 
-postToPage(score);
+postToPage(score); // Print to the page
+
 
 createButton('higher', btnPress);
 createButton('lower', btnPress2);
+
 changeTitle('Clicker Game');
+createText('Hello');
 
 setInterval(btnPress, 100);
 
