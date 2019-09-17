@@ -6,7 +6,7 @@ createButton('higher', btnPress);
 createButton('lower', btnPress2);
 changeTitle('Clicker Game');
 
-setInterval(btnPress, 1000);
+setInterval(btnPress, 100);
 
 function btnPress() {
   score++;
