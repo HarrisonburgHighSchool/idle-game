@@ -1,6 +1,25 @@
 # Idle Game Framework
 
-An engine for creating web-based idle games with vanilla Javascript and Bootstrap as the styling framework. Please read the examples below for usage tips and examples
+An engine for creating web-based idle games with vanilla Javascript and Bootstrap as the styling framework. Please read the examples below for usage tips and examples.
+
+The framework expects your **game code** to run in `game.js`. The rules and functions for the engine are stored in `engine.js`.
+
+If you want to get started with an example, clone this repository and paste the following code into `game.js`:
+
+```javascript
+var score = 0; // Create a variable to store the score in
+
+var title = new Title('Welcome to the Game'); // Create a title element
+var button = new Button('hello', btnPress);         // Create a button element
+var scr = new Text(score);                     // Create a text element
+
+setInterval(btnPress, 1000);   // Set up a loop
+
+function btnPress() {
+  score++;         // Increase the score
+  scr.edit(score); // Update the page with the new score
+}
+```
 
 ### Creating an Element
 
