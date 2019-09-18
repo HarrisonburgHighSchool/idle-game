@@ -55,7 +55,7 @@ class HTMLElement {
     }
     this.type;
     this.hidden = false;
-
+    this.add();
   }
   add(parent) {
     if(parent) {
@@ -79,9 +79,15 @@ class HTMLElement {
       element.innerHTML = value;
     }
   }
-  style(value, attribute) {
+  style(attribute, value) {
     let element = this.getElement();
     element.style[attribute] = value;
+  }
+  hide() {
+    this.style('display', 'none');
+  }
+  show() {
+    this.style('display', 'block');
   }
   create() {
     let element = document.createElement(this.tag);
@@ -100,17 +106,25 @@ class Button extends HTMLElement {
   constructor(value, script, id, parent) {
     super('button', value, id, parent);
     this.script = script;
-  }
-  add(parent) {
-    if(parent) {
-      this.parent = parent;
-    }
-    let button = this.create();
+    this.className = 'btn btn-primary';
+    this.type = 'button';
+    let button = this.getElement();
+    button.className = this.className;
+    button.type = this.type;
+    button.innerHTML = this.value;
     button.addEventListener('click', this.script);
-    button.className = 'btn btn-primary';
+  }
+}
 
-    document.getElementById(this.parent).appendChild(button);
-    console.log('Created element with id ' + this.id);
+class Title extends HTMLElement {
+  constructor(value, id, parent) {
+    super('h1', value, id, parent);
+  }
+}
+
+class Text extends HTMLElement {
+  constructor(value, id, parent) {
+    super('p', value, id, parent);
   }
 }
 
