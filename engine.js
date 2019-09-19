@@ -62,6 +62,8 @@ class HTMLElement {
       this.parent = parent;
     }
     let element = this.create()
+    element.id = this.id;
+    element.classList.add('shown');
     document.getElementById(this.parent).appendChild(element);
     console.log('Created element with id ' + this.id);
 
@@ -83,11 +85,20 @@ class HTMLElement {
     let element = this.getElement();
     element.style[attribute] = value;
   }
-  hide() {
-    this.style('display', 'none');
+  hide(rate) {
+    let element = this.getElement();
+    if(rate) {
+      element.style.transition = 'opacity ' + rate + 'ms linear';
+    }
+    //element.style.transition = 'opacity 1s linear'
+    element.style.opacity = 0;
   }
-  show() {
-    this.style('display', 'block');
+  show(rate) {
+    let element = this.getElement();
+    if(rate) {
+      element.style.transition = 'opacity ' + rate + 'ms linear';
+    }
+    element.style.opacity = 1;
   }
   create() {
     let element = document.createElement(this.tag);
@@ -109,7 +120,8 @@ class Button extends HTMLElement {
     this.className = 'btn btn-primary';
     this.type = 'button';
     let button = this.getElement();
-    button.className = this.className;
+    button.classList.add('btn');
+    button.classList.add('btn-primary');
     button.type = this.type;
     button.innerHTML = this.value;
     button.addEventListener('click', this.script);
@@ -132,11 +144,11 @@ class Columns extends HTMLElement {
   constructor(columns, id, parent) {
     super('div', null, id, parent);
     let row = this.getElement();
-    row.className = 'row';
+    row.classList.add('row');
     this.columns = [];
     for(var i = 0; i < columns; i++) {
       let col = new HTMLElement('div', "", randomID(), this.id);
-      col.className = 'col';
+      col.classList.add('col');
       this.columns.push(col);
     }
   }

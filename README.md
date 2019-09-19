@@ -87,4 +87,12 @@ function scoreIncrease() {
   }
 }
 
+```
+
+If you pass a number into the `hide()` or `show()` functions, you can control how fast the element fades in or out.
+
+```javascript
+button.hide(500); // Fade out over the course of 500 milliseconds
+button.show(0);   // Fade in instantly  (0 milliseconds)
+```
 ----
