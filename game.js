@@ -29,7 +29,6 @@ function btnPress2() {
   scr.edit(score); // Update the page with the new score
 }
 
-setIncrease(scoreIcrease, 1000);// Run the "scoreIncrease" function once every
 function scoreIncrease() {
   score++;                 //Increase the score
 }
