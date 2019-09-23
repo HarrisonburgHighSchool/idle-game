@@ -9,7 +9,7 @@ An engine for creating web-based idle games with vanilla Javascript and Bootstra
 * [Removing an Element](#removing-an-element)
 * [Hiding an Element](#hiding-an-element)
 * [Creating a Section](#creating-a-section)
-  * [Rows & Columns](##rows-&-columns)
+  * Rows & Columns
 * [Adding a Function to a Button](#adding-a-function-to-a-button)
 * [Setting Up a Loop](#setting-up-a-loop)
 
@@ -119,7 +119,7 @@ buttonSection.add(stoneButton);
 
 Elements that are in the same section will be grouped together on the screen.
 
-## Rows & Columns
+## Types of Sections: Rows & Columns
 
 Sections can be combined to create **rows** and **columns**. You can create columns by adding `col` sections to a `row` section. Here is an example:
 
