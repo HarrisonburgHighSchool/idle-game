@@ -111,6 +111,11 @@ class HTMLElement {
     let element = document.getElementById(this.id);
     return element;
   }
+  remove() {
+    // Removes an element from the document
+    var element = this.getElement();
+    element.parentNode.removeChild(element);
+  }
 }
 
 class Button extends HTMLElement {

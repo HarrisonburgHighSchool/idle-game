@@ -35,6 +35,19 @@ More elements are being added all the time. Stay up to date by reading this reso
 
 ----
 
+### Removing an Element
+
+To remove an element, call the `remove()` function on it:
+
+```javascript
+let welcome = new Title('Welcome to the Game!');
+welcome.remove();
+```
+
+This is different than `hiding()` an element; once you destroy it, you cannot get it back.
+
+----
+
 ### Adding a Function to a Button
 
 You can make a button call a `function` when you click it like this:
