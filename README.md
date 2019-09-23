@@ -9,7 +9,7 @@ An engine for creating web-based idle games with vanilla Javascript and Bootstra
 * [Removing an Element](#removing-an-element)
 * [Hiding an Element](#hiding-an-element)
 * [Creating a Section](#creating-a-section)
-  * [Rows & Columns](#types-of-sections:-rows-&-columns)
+  * [Rows & Columns](#types-of-sections-rows-&-columns)
 * [Adding a Function to a Button](#adding-a-function-to-a-button)
 * [Setting Up a Loop](#setting-up-a-loop)
 
