@@ -2,6 +2,12 @@
 
 An engine for creating web-based idle games with vanilla Javascript and Bootstrap as the styling framework. Please read the examples below for usage tips and examples.
 
+### Table of Contents:
+
+----
+
+# Intro
+
 The framework expects your **game code** to run in `game.js`. The rules and functions for the engine are stored in `engine.js`.
 
 If you want to get started with an example, clone this repository and paste the following code into `game.js`:
@@ -21,7 +27,9 @@ function btnPress() {
 }
 ```
 
-### Creating an Element
+----
+
+# Creating an Element
 
 There are many elements to create in this framework. Here are some examples:
 
@@ -35,7 +43,7 @@ More elements are being added all the time. Stay up to date by reading this reso
 
 ----
 
-### Removing an Element
+# Removing an Element
 
 To remove an element, call the `remove()` function on it:
 
@@ -48,7 +56,47 @@ This is different than `hiding()` an element; once you destroy it, you cannot ge
 
 ----
 
-### Adding a Function to a Button
+# Creating a Section
+
+**Sections** are used to organize other elements into different parts of the screen. Create a section like this:
+
+```javascript
+let mySection = new Section();
+```
+
+Once you have created a section, you can add different elements to it by using the `add()` function:
+
+```javascript
+var rockButton = new Button('Collect rocks');
+var stoneButton = new Button('Collect stones');
+
+var buttonSection = new Section();
+
+buttonSection.add(rockButton);
+buttonSection.add(stoneButton);
+```
+
+Elements that are in the same section will be grouped together on the screen.
+
+### Types of Sections: Rows & Columns
+
+Sections can be combined to create **rows** and **columns**. You can create columns by adding `col` sections to a `row` section. Here is an example:
+
+```javascript
+var text1 = new Text('I will go in column 1');  // Create some text to go in the columns
+var text2 = new Text('I will go in column 2');
+
+var rowSection = new Section('row'); // Create the row to store the columns in
+var column1 = new Section('col');    // Create the first column
+var column2 = new Section('col');    // Create the second column
+
+column1.add(text1);
+column2.add(text2);
+```
+
+----
+
+# Adding a Function to a Button
 
 You can make a button call a `function` when you click it like this:
 
@@ -65,7 +113,7 @@ function scoreIncrease() {
 
 ----
 
-### Setting Up a Loop
+# Setting Up a Loop
 
 Create a loop using the `setInterval()` function. The first value in the parentheses is **the function you would like to loop**, and the second value is **how often you loop it** (in milliseconds).
 
@@ -81,7 +129,7 @@ function createButton() {
 
 ----
 
-### Hiding an Element
+# Hiding an Element
 
 To hide an element, use the `hide()` method. To show an element, use the `show()` method:
 
