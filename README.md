@@ -4,6 +4,16 @@ An engine for creating web-based idle games with vanilla Javascript and Bootstra
 
 ### Table of Contents:
 
+* [Intro](#Intro)
+* [Creating an Element](#creating-an-element)
+* [Removing an Element](#removing-an-element)
+* [Hiding an Element](#hiding-an-element)
+* [Creating a Section](#creating-a-section)
+  * [Rows & Columns](#types-of-sections:-rows-&-columns)
+* [Adding a Function to a Button](#adding-a-function-to-a-button)
+* [Setting Up a Loop](#setting-up-a-loop)
+
+
 ----
 
 # Intro
@@ -39,6 +49,8 @@ let button = new Button('I am a button'); // Create a button element and place i
 let title = new Title('Title of Game');   // Create a title element and place it on the screen
 ```
 
+When you create an element, it automatically shows up on the screen. To `hide()` an element, read: [Hiding an Element](#Hiding-an-Element).
+
 More elements are being added all the time. Stay up to date by reading this resource! You can submit a request for an element [here]().
 
 ----
@@ -54,6 +66,35 @@ welcome.remove();
 
 This is different than `hiding()` an element; once you destroy it, you cannot get it back.
 
+----
+
+# Hiding an Element
+
+To hide an element, use the `hide()` method. To show an element, use the `show()` method:
+
+```javascript
+let score = 0;                   // Set score to 
+let button = new Button('Boo!'); // Make a button
+button.hide()                    // Hide the button
+
+setInterval(scoreIncrease, 1000);// Run the "scoreIncrease" function once every second (1000 milliseconds)
+
+function scoreIncrease() {
+  score++;                       // Increase the score
+
+  if(score > 10) {
+    button.show();               // If the score reaches 11, show the button!
+  }
+}
+
+```
+
+If you pass a number into the `hide()` or `show()` functions, you can control how fast the element fades in or out.
+
+```javascript
+button.hide(500); // Fade out over the course of 500 milliseconds
+button.show(0);   // Fade in instantly  (0 milliseconds)
+```
 ----
 
 # Creating a Section
@@ -129,31 +170,4 @@ function createButton() {
 
 ----
 
-# Hiding an Element
 
-To hide an element, use the `hide()` method. To show an element, use the `show()` method:
-
-```javascript
-let score = 0;                   // Set score to 
-let button = new Button('Boo!'); // Make a button
-button.hide()                    // Hide the button
-
-setInterval(scoreIncrease, 1000);// Run the "scoreIncrease" function once every second (1000 milliseconds)
-
-function scoreIncrease() {
-  score++;                       // Increase the score
-
-  if(score > 10) {
-    button.show();               // If the score reaches 11, show the button!
-  }
-}
-
-```
-
-If you pass a number into the `hide()` or `show()` functions, you can control how fast the element fades in or out.
-
-```javascript
-button.hide(500); // Fade out over the course of 500 milliseconds
-button.show(0);   // Fade in instantly  (0 milliseconds)
-```
-----
