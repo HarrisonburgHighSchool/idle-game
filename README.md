@@ -12,6 +12,7 @@ An engine for creating web-based idle games with vanilla Javascript and Bootstra
   * Rows & Columns
 * [Adding a Function to a Button](#adding-a-function-to-a-button)
 * [Setting Up a Loop](#setting-up-a-loop)
+* [Changing Font](#changing-font)
 
 
 ----

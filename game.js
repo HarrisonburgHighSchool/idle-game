@@ -9,5 +9,6 @@ var scr = new Text(score);                    // Create a text element
 setInterval(btnPress, 1000);   // Set up a loop
 
 function btnPress() {
-  destroyElement(title);
+  score++;
+  scr.edit(score);
 }
