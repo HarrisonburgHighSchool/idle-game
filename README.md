@@ -132,8 +132,11 @@ var rowSection = new Section('row'); // Create the row to store the columns in
 var column1 = new Section('col');    // Create the first column
 var column2 = new Section('col');    // Create the second column
 
-column1.add(text1);
-column2.add(text2);
+rowSection.add(column1);  // Add the first column to the row
+rowSection.add(column2);  // Add the second column to the row
+
+column1.add(text1);  // Add the text to the first column
+column2.add(text2);  // Add the text to the second column
 ```
 
 ----
