@@ -55,9 +55,9 @@ class HTMLElement {
     }
     this.type;
     this.hidden = false;
-    this.add();
+    this.finalize();
   }
-  add(parent) {
+  finalize(parent) {
     if(parent) {
       this.parent = parent;
     }
@@ -111,6 +111,19 @@ class HTMLElement {
     let element = document.getElementById(this.id);
     return element;
   }
+  remove() {
+    // Removes an element from the document
+    var element = this.getElement();
+    element.parentNode.removeChild(element);
+  }
+  addClass(className) {
+    let element = this.getElement();
+    element.classList.add(className);
+  }
+  changeFont(font) {
+    let element = this.getElement();
+    element.style.fontFamily = font;
+  }
 }
 
 class Button extends HTMLElement {
@@ -125,6 +138,7 @@ class Button extends HTMLElement {
     button.type = this.type;
     button.innerHTML = this.value;
     button.addEventListener('click', this.script);
+    this.addClass('m-1');
   }
 }
 
@@ -162,6 +176,18 @@ class Columns extends HTMLElement {
   }
 }
 
+class Section extends HTMLElement {
+  constructor(cls, id, parent) {
+    super('div', "", id, parent);
+    this.addClass(cls);
+  }
+  add(element) {
+    let child = element.getElement();
+    let parent = this.getElement();
+    parent.appendChild(child);
+  }
+}
+
 function randomID() {
   return String(Math.floor(Math.random() * 10000))
 }
@@ -170,4 +196,8 @@ function require(filename) {
   let script = document.createElement('script');
   script.setAttribute('src', filename);
   document.body.appendChild(script);
+}
+
+function changeFont(font) {
+  document.body.style.fontFamily = font;
 }
