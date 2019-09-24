@@ -120,6 +120,10 @@ class HTMLElement {
     let element = this.getElement();
     element.classList.add(className);
   }
+  changeFont(font) {
+    let element = this.getElement();
+    element.style.fontFamily = font;
+  }
 }
 
 class Button extends HTMLElement {
@@ -192,4 +196,8 @@ function require(filename) {
   let script = document.createElement('script');
   script.setAttribute('src', filename);
   document.body.appendChild(script);
+}
+
+function changeFont(font) {
+  document.body.style.fontFamily = font;
 }
