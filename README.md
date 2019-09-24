@@ -165,12 +165,18 @@ Create a loop using the `setInterval()` function. The first value in the parenth
 Here is an example:
 
 ```javascript
-setInterval(createButton, 1000); // Run the "createButton" function once every 1000 milliseconds (once every second)
+var loop = setInterval(createButton, 1000); // Run the "createButton" function once every 1000 milliseconds (once every second)
 
 function createButton() {
   let button = new Button('hello!');
 }
+
+function stopLoop() {
+  clearInterval(loop);
+}
 ```
+
+To end the loop, you need to call the `clearInterval()` function and pass in the variable you stored the loop in. Look at the `stopLoop()` function above for an example.
 
 ----
 
