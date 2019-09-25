@@ -28,7 +28,7 @@ function btnPress1() {
 }
 
 function btnPress2() {
-  score--;
+  
   scr.edit(score); // Update the page with the new score
 }
 
