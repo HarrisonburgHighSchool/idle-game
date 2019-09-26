@@ -10,6 +10,7 @@ An engine for creating web-based idle games with vanilla Javascript and Bootstra
 * [Hiding an Element](#hiding-an-element)
 * [Creating a Section](#creating-a-section)
   * Rows & Columns
+* [Borders](#borders)
 * [Adding a Function to a Button](#adding-a-function-to-a-button)
 * [Setting Up a Loop](#setting-up-a-loop)
 * [Changing Font](#changing-font)
@@ -137,6 +138,32 @@ rowSection.add(column2);  // Add the second column to the row
 
 column1.add(text1);  // Add the text to the first column
 column2.add(text2);  // Add the text to the second column
+```
+
+----
+
+# Borders
+
+You can add a border to any element using the `addBorder()` function. Here is an example:
+
+```javascript
+var section = new Section();
+var text = new Text('Here is some text');
+
+section.add(text);
+section.addBorder();
+```
+
+You can pass in a color to the `addBorder()` function to change the color of the border.
+
+```javascript
+section.addBorder('red');
+```
+
+To remove the border, call the `removeBorder()` function:
+
+```javascript
+section.removeBorder();
 ```
 
 ----

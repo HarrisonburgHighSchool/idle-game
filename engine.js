@@ -124,6 +124,16 @@ class HTMLElement {
     let element = this.getElement();
     element.style.fontFamily = font;
   }
+  addBorder(color) {
+    this.style('border-style', 'solid');
+    this.style('border-width', '5px');
+    if(color) {
+      this.style('border-color', color);
+    }
+  }
+  removeBorder() {
+    this.style('border-style', 'none');
+  }
 }
 
 class Button extends HTMLElement {
