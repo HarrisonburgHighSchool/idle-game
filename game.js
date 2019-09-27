@@ -10,7 +10,7 @@ var text1 = new Text('weapons');  // Create some text to go in the columns
 var text2 = new Text('I will go in column 2');
 
 var section = new Section();
-var text =new Text('Here is some text');
+var text =new Text('Text');
 
 section.add(text);
 section.addBorder('green');
@@ -21,7 +21,8 @@ var column2 = new Section('col')
 
 rowSection.add(column1);
 rowSection.add(column2);
-section.style('height', '20rem')
+section.style('height', '30rem')
+section.style('width', '12rem')
 
 column1.add(text1);
 column2.add(text2);
@@ -46,19 +47,19 @@ function btnPress1() {
 }
 
 function btnPress2() {
-  var section = new Section();
-var text = new Text('Here is some text');
+  var weapons = new Section();
+var text1 = new Text('Weapons');
 
-section.add(text);
-section.addBorder();
+weapons.style('height', '20rem')
+weapons.style('width', '12rem')
+
+weapons.add(text1);
+weapons.addBorder();
+column2.add(weapons);
 
   scr.edit(score); // Update the page with list of weapons
 }
 
 function scoreIncrease() {
   score++;                 //Increase the score
-}
-
-if(score > 1000){
-  button.show(); //If the score reaches 100, show the button!
 }
